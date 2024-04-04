@@ -1,0 +1,3 @@
+%{A question|Here is one question|Question|A query which must be answered|Here's a question}: {{question}}
+[SEP]
+%{Answer|An answer is|Here is a possible answer}: {{answer}}

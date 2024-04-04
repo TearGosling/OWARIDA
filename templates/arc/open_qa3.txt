@@ -1,0 +1,5 @@
+%{Take a look at this|Here is a|You must answer this|Look! A|This is a|This is a question. You must answer this|I'm gonna ask you a|I will ask you this|Behold this} question%{.|!}
+{{question}}
+%{What is a possible answer?|Answer the question in a plausible way.|An answer to this question could be...|A correct answer is:|Now this question must be answered.|The question will now be answered.}
+[SEP]
+{{answer}}

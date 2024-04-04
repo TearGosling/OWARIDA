@@ -1,0 +1,5 @@
+%{Answer choices|Here are some answer choices|The following is a list of potential answers to a question|Below are answer choices|Here are some possible answers|Multiple potential answers to a hypothetical question are posed here}:
+{{answer_choices}}
+%{What is|What's} a %{potential|possible|plausible|really plausible} %{question|question that could be asked|question which can be asked} that %{could|can|could possibly|can possibly|could potentially|can potentially} %{align|match up} with %{the|these} answer choices%{?|.}
+[SEP]
+{{question}}

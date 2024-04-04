@@ -1,0 +1,5 @@
+%{Here is|Here's} %{a random answer|an answer} to %{an unknown|any possible} question or %{completion|conclusion} to an unfinished text:
+{{answer}}
+%{What is|What's} a %{valid|possible|nice|relevant} question %{that|which} %{can|could} be %{generated|uttered|posed|asked} %{as a result of|from|which lines up with|which aligns with|that lines up with|that aligns with} this answer?
+[SEP]
+{{question}}

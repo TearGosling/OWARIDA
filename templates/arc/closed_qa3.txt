@@ -1,0 +1,6 @@
+%{Here are|Here're|We have here|Shown are} some %{potential|possible|} answers to a question. %{Pick the correct one|You must choose the right one|Out of these choices, only one is right|There can be only one correct answer|Only one is the actual and correct answer}.
+{{answer_choices}}
+%{The question|This is the question|Question|Here is what is being asked|Now here is the question|Q}:
+{{question}}
+[SEP]
+%{My answer is|Answer:|My answer:|It would be|It must be|It has to be|Why, it's|The answer is|That would be|Well, it has to be} %{choice|option|answer} {{letter}}. {{letter_with_answer}}
