@@ -3,4 +3,4 @@
 %{The question|This is the question|Question|Here is what is being asked|Now here is the question|Q}:
 {{question}}
 [SEP]
-%{My answer is|Answer:|My answer:|It would be|It must be|It has to be|Why, it's|The answer is|That would be|Well, it has to be} %{choice|option|answer} {{letter}}. {{letter_with_answer}}
+%{My answer is|Answer:|My answer:|It would be|It must be|It has to be|Why, it's|The answer is|That would be|Well, it has to be|it's gotta be} %{choice|option|answer} {{letter}}. {{letter_with_answer}}

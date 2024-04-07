@@ -2,7 +2,7 @@ import argparse
 
 from tqdm import tqdm
 
-from processors import PROCESSOR_MAP
+from owarida.processors import PROCESSOR_MAP
 
 def main():
     parser = argparse.ArgumentParser()

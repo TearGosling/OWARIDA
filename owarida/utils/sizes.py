@@ -4,11 +4,11 @@
 # We have to hardcode the sizes in there because otherwise it would be impossible to say beforehand
 # how much storage space we roughly need for both the input files and output augmented files.
 
-# The sizes are in MB.
-DATASET_SIZES = {
-    'arc_challenge': 0.1,
+# The tuple represents (size of dataset, output size of 1 iteration of data), in MB. 
+DATASET_SIZES: dict[str, tuple[float, float]] = {
+    'arc_challenge': (4.03, 0.409),
+    'arc_easy': (7.09, 0.765)
 }
-
 
 def _format_filesize(mb: float, digits: int = 2) -> float:
     '''
@@ -24,4 +24,3 @@ def _format_filesize(mb: float, digits: int = 2) -> float:
         size = mb / 1000
         suffix = "GB"
     return f"{round(size, digits)} {suffix}"
-

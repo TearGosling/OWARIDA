@@ -1,4 +1,0 @@
-{{question}}
-{{answer_choices}}
-[SEP]
-{{letter}}

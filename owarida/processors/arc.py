@@ -7,8 +7,7 @@ from typing import Optional
 from datasets import Dataset, concatenate_datasets, load_dataset
 
 from .base import BaseProcessor
-sys.path.append('..')
-from utils import get_data_dir, get_templates, get_output_dir, select_template
+from ..utils import get_data_dir, get_templates, get_output_dir, select_template
 
 # Enum to make indexing much easier.
 class AnswerChoice(Enum):
@@ -131,8 +130,8 @@ class ArcProcessor(BaseProcessor):
             if len(answers) < len(enum_iterator):
                 num_missing = len(enum_iterator) - len(answers)
                 enum_iterator = enum_iterator[:-num_missing]
-            # There is a chance one of the augmentations designed to boost generalizaiton
-            # is where the answer choices are not in A, B, C, D order but rather scrambled.
+            # One of the templates designed to boost generalizaiton
+            # is where answer choices are not in alphabetical/numerical order but rather scrambled.
             # Check for that and if this exists, scramble the enum iterator.
             if "{{jumbled_answer_choices}}" in augmented_entry:
                 random.shuffle(enum_iterator)
