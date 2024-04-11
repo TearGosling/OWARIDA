@@ -3,4 +3,4 @@ The only answers %{that can be picked|which are applicable|which can be chosen} 
 {{answer_choices}}
 What is the %{correct|true|actual|right|most likely} answer%{?| to that question?| to this question?| of this question?| of that question?| for this question?| here?}
 [SEP]
-{{answer}}. The %{answer|answer choice} %{is|must be|has to be|thus has to be|will therefore be|as a result is|} {{letter}}.
+{{answer}}. The %{answer|answer choice} %{is|must be|has to be|thus has to be|will therefore be|as a result is} {{letter}}.

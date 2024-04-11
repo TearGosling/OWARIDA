@@ -1,0 +1,6 @@
+%{Here are presented|There are here|Here are|There are} %{two|2} %{options|answer choices for|choices to pick from in regards to|potential answers to} %{some|some sort of|a} %{fill-in-the-blank task|"complete the sentence" problem}:
+{{letter_answer_choices}}
+%{You shall now|You must|Be aware that now you will|Your goal is to|It shall be ordained that you have to|Your mission is to} %{create|generate|craft|make up|imagine|form} %{at least one sentence|a statement or a set of them} with %{a blank|an incomplete spot} in it that can be %{filled in|substituted|subbed|replaced} with %{1 (and only 1)|one (and only one)|only 1|only one} of the %{provided|given} %{options|answer choices}. %{Then|Furthermore|Additionally|In addition|Also}, you %{must|need to} %{select the right choice from the options above|pick the option that most likely corresponds to what can be properly filled in}.
+[SEP]
+{{question}}
+%{The correct answer is|The only correct substitution is|Out of the two options, the correct one would be|The best candidate for what can be filled in the blank is} {{answer}}.

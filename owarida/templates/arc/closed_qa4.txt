@@ -1,5 +1,5 @@
 {{question}}
 {{answer_choices}}
-%{Reply with|Generate only|The response should be|You must use in your reply} %{a singular|only one} %{letter or number|number or letter|character}.
+%{Reply with|Generate only|The response should be|You must use in your reply} %{a singular|only one|one|1|only 1} %{letter or number|number or letter|character}.
 [SEP]
 {{letter}}

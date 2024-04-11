@@ -146,10 +146,15 @@ cython_debug/
 
 # Data inside the data folder.
 # Has to be for each module due to the way .gitkeep works.
+
+## ARC ##
 owarida/data/arc_challenge/*
 !owarida/data/arc_challenge/.gitkeep
 owarida/data/arc_easy/*
 !owarida/data/arc_easy/.gitkeep
+## Winogrande ##
+owarida/data/winogrande/*
+!owarida/data/winogrande/.gitkeep
 
 # PyCharm
 #  JetBrains specific template is maintainted in a separate JetBrains.gitignore that can

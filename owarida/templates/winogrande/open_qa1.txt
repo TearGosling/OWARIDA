@@ -1,0 +1,5 @@
+%{Fill in|Complete|Substitute|Replace} the %{missing text|blank|blank word|sole blank|singular blank|part of the sentence which is cut out of it|missing word(s) in the sentence}%{.|!}
+{{question}}
+%{Do|You will|You shall|It has to be stated that you must|You can|You should}%{n't| not} %{reply with more than|generate anything but|say anything else except|say anything except|have in your response anything but|utter something other than} %{what to fill in the blank|the answer|the appropriate word(s)|the proper substitution}%{.|!}
+[SEP]
+{{answer}}

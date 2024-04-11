@@ -6,8 +6,9 @@
 
 # The tuple represents (size of dataset, output size of 1 iteration of data), in MB. 
 DATASET_SIZES: dict[str, tuple[float, float]] = {
-    'arc_challenge': (4.03, 0.409),
-    'arc_easy': (7.09, 0.765)
+    'arc_challenge': (4.86, 0.416),
+    'arc_easy': (8.60, 0.76),
+    'winogrande': (11.98, 3.64)
 }
 
 def _format_filesize(mb: float, digits: int = 2) -> float:

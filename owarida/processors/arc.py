@@ -1,21 +1,17 @@
 import random
-import sys
 
-from enum import Enum
 from typing import Optional
 
 from datasets import Dataset, concatenate_datasets, load_dataset
 
 from .base import BaseProcessor
-from ..utils import get_data_dir, get_templates, get_output_dir, select_template
-
-# Enum to make indexing much easier.
-class AnswerChoice(Enum):
-    A = 0
-    B = 1
-    C = 2
-    D = 3
-    E = 4
+from ..utils import (
+    AnswerChoice,
+    get_data_dir,
+    get_templates,
+    get_output_dir,
+    select_template
+)
 
 class ArcProcessor(BaseProcessor):
     def __init__(self, split_name: str) -> None:
@@ -31,9 +27,10 @@ class ArcProcessor(BaseProcessor):
 
         self.dataset = self.download()
         self.new_dataset = None # Placeholder for the augmented dataset.
-        self.templates = get_templates('arc')
+        self.templates = None
 
     def augment(self):
+        self.templates = get_templates('arc')
         for _ in range(self.num_iterations):
             if self.new_dataset is None:
                 # First run of augmentations. Create the first one by applying augmentations to old dataset.
@@ -63,16 +60,16 @@ class ArcProcessor(BaseProcessor):
         '''
         self.num_iterations = num_iterations
     
-    def write(self, data_dir: Optional[str] = None) -> None:
+    def write(self, output_dir: Optional[str] = None) -> None:
         '''
         Writes the augmented dataset to disk.
         Args:
             data_dir: The directory to write the augmented dataset to,
             if it needs to be something other than the default. Set to None to use the default.
         '''
-        data_dir = data_dir if data_dir is not None else self.output_dir
+        output_dir = output_dir if output_dir is not None else self.output_dir
         self.new_dataset.to_json(
-            f"{data_dir}/augmented.jsonl",
+            f"{output_dir}/augmented.jsonl",
             orient="records",
             lines=True
         )
@@ -108,6 +105,11 @@ class ArcProcessor(BaseProcessor):
             correct_answer_idx = answers.index(correct_answer)
             # ...and do a reverse lookup on the enum to find the new letter, if the answer choice isn't numeric.
             correct_answer_letter = AnswerChoice(correct_answer_idx).name if not numeric_answer else str(correct_answer_idx + 1)
+            # Sometimes lowercase the letters too, to account for case-sensitive tokenizers.
+            lowered_letters = False
+            if random.random() < 0.5:
+                lowered_letters = True
+                correct_answer_letter = correct_answer_letter.lower()
 
             # There are two potential ways to format the answer choices in the ARC templates.
             # The first is {{letter_with_answer}}, which combines the letter, the separator, and the answer in one go.
@@ -142,27 +144,11 @@ class ArcProcessor(BaseProcessor):
                     if numeric_answer:
                         answer_choices += f"{i.value + 1}{separator}{answers[i.value]}\n"
                     else:
-                        answer_choices += f"{i.name}{separator}{answers[i.value]}\n"
+                        letter = i.name.lower() if lowered_letters else i.name
+                        answer_choices += f"{letter}{separator}{answers[i.value]}\n"
                 except IndexError:
                     print(f"IndexError: i.value: {i.value}, answers: {answers}, len(answers): {len(answers)}")
             # Replace the answer choices in the template.
             augmented_entry = augmented_entry.replace(str_to_replace, answer_choices.strip())
 
-        # Structure the ShareGPT-formatted dictionary.
-        # We use [SEP] as the separator between the human and model turn.
-        assert len(augmented_entry.split("[SEP]")) == 2, f"Augmented entry has either no or more than one [SEP]. Entry:\n{augmented_entry}"
-        human_turn, model_turn = augmented_entry.split("[SEP]")
-        sharegpt_dict = {
-            "conversations":
-            [
-                {
-                    "from": "human",
-                    "value": human_turn.strip(),
-                },
-                {
-                    "from": "gpt",
-                    "value": model_turn.strip(),
-                }
-            ]
-        }
-        return sharegpt_dict
+        return self._return_sharegpt(augmented_entry)

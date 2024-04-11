@@ -8,10 +8,12 @@ The usual command:
 
 ## Usage:
 `python build.py --datasets all --num_iterations 1`
-By default, all datasets are selected for augmenting, but you can specify specific datasets with a comma-separated list. The valid 
+By default, all datasets are selected for augmenting, but you can specify specific datasets with a comma-separated list. The valid datasets are in the next section.
 
 ## List of datasets
 - `arc_challenge`
     - The "challenge" section of AI2's [ARC dataset](https://huggingface.co/datasets/allenai/ai2_arc).
 - `arc_easy`
     - The "easy" section of AI2's [ARC dataset](https://huggingface.co/datasets/allenai/ai2_arc).
+- `winogrande`
+    - Fill-in-the-blank dataset and benchmark which can be found [here](https://huggingface.co/datasets/winogrande). Debiased version.

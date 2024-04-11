@@ -1,0 +1,6 @@
+{{question}}
+%{You are ordered to|The objective is to|Directions:|Follow this instruction. You shall} %{fill in the blank for|replace a missing word in|perform infilling on} %{the preceding|the previous|the} sentences which have a blank in them%{, given two answer choices.|. You have two options:|. Select the word(s) from either of these two choices that best fits.| and it must be 1 out of these 2 choices:|. Options A and B are available to you:|. Take a look at answer choice A and answer choice B. Choose the correct answer from the two.| and it must be 1 of the following options:}
+{{letter_answer_choices}}
+%{Reply with nothing except|Do not say anything except|A rule: only output|You shall not have a single thing in your response EXCEPT for} %{the|a} %{correct|right} %{answer choice|answer}.
+[SEP]
+{{answer}}
