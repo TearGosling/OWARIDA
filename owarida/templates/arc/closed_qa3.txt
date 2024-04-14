@@ -1,6 +1,6 @@
-%{Here are|Here're|We have here|Shown are} some %{potential|possible|} answers to a question. %{Pick the correct one|You must choose the right one|Out of these choices, only one is right|There can be only one correct answer|Only one is the actual and correct answer}.
+%{Here are|Here're|We have here|Shown are|The following answers are} some %{potential|possible|plausible|credible|given} answers to a question. %{Pick the correct one|You must choose the right one|Out of these choices, only one is right|There can be only one correct answer|Only one is the actual and correct answer}.
 {{answer_choices}}
-%{The question|This is the question|Question|Here is what is being asked|Now here is the question|Q}:
+%{The question|This is the question|Question|Here is what is being asked|Now here is the question|Q|Here it is|Here's the question|This is what's being asked}:
 {{question}}
 [SEP]
-%{My answer is|Answer:|My answer:|It would be|It must be|It has to be|Why, it's|The answer is|That would be|Well, it has to be|it's gotta be} %{choice|option|answer} {{letter}}. {{letter_with_answer}}
+%{My answer is|Answer:|My answer:|It would be|It must be|It has to be|Why, it's|The answer is|That would be|Well, it has to be|it's gotta be|Undeniably, it's|Given the question, the most likely answer is|Truly, the right choice is|Gotta be}%{ choice| option| answer|} {{letter_with_answer}}
